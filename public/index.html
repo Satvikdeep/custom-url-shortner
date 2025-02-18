@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom URL Shortener</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Custom URL Shortener</h1>
+    
+    <form id="urlForm">
+      <label for="originalUrl">Enter Original URL:</label>
+      <input type="url" id="originalUrl" placeholder="https://example.com" required>
+      
+      <label for="alias">Custom Alias (optional):</label>
+      <input type="text" id="alias" placeholder="my-alias">
+
+      <label for="expiryDate">Expiry Date (optional):</label>
+      <input type="date" id="expiryDate">
+
+      <button type="submit">Shorten URL</button>
+    </form>
+
+    <div id="result" class="result" style="display:none;">
+      <h2>Your Shortened URL</h2>
+      <p id="shortUrl"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

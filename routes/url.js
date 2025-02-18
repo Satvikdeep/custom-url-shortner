@@ -3,6 +3,18 @@ const router = express.Router();
 const Url = require('../models/Url');
 const shortid = require('shortid'); // Ensure shortid is imported
 
+router.get('/test-db', async (req, res) => {
+  try {
+    // Test MongoDB connection by inserting a dummy document
+    const testDoc = new Url({ originalUrl: 'https://example.com' });
+    await testDoc.save();
+    res.status(200).json({ message: 'Database connection successful', doc: testDoc });
+  } catch (err) {
+    console.error('Database connection error:', err);
+    res.status(500).json({ error: 'Database connection failed', details: err.message });
+  }
+});
+
 // Create Short URL
 router.post('/shorten', async (req, res) => {
     const { originalUrl, alias, expiryDate } = req.body;

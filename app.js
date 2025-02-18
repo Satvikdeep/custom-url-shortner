@@ -21,6 +21,10 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use('/url', urlRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the URL Shortener API');
+});
+
 // Start Server
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 

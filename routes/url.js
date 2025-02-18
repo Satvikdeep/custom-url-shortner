@@ -5,6 +5,7 @@ const Url = require('../models/Url');
 // Create Short URL
 router.post('/shorten', async (req, res) => {
     const { originalUrl, alias, expiryDate } = req.body;
+    console.log('Request Body:', req.body); // Log the request body
   
     try {
       // If alias is provided, use it as the short URL

@@ -5,21 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom URL Shortener</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <div class="container">
-    <h1>Custom URL Shortener</h1>
-    
-    <form id="urlForm">
-      <label for="originalUrl">Enter Original URL:</label>
-      <input type="url" id="originalUrl" placeholder="https://example.com" required>
-      
-      <label for="alias">Custom Alias (optional):</label>
-      <input type="text" id="alias" placeholder="my-alias">
+    <div class="header">
+      <h1>Custom URL Shortener</h1>
+      <p>Shorten your URLs quickly and easily!</p>
+    </div>
 
-      <label for="expiryDate">Expiry Date (optional):</label>
-      <input type="date" id="expiryDate">
+    <form id="urlForm">
+      <div class="form-group">
+        <label for="originalUrl">Enter Original URL:</label>
+        <input type="url" id="originalUrl" placeholder="https://example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="alias">Custom Alias (optional):</label>
+        <input type="text" id="alias" placeholder="my-alias">
+      </div>
+
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date (optional):</label>
+        <input type="date" id="expiryDate">
+      </div>
 
       <button type="submit">Shorten URL</button>
     </form>

@@ -18,5 +18,10 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use('/url', urlRoutes);
 
+// Serve index.html at the root path
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 // Start Server
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
